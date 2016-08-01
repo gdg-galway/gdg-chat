@@ -114,7 +114,7 @@ The `child_added` event will be triggered everytime a new child object is added 
 
 ```javascript
 var ref_messages = firebase.database().ref('messages').limitToLast(100);
-ref\_messages.on('child_added', function(value) {
+ref_messages.on('child_added', function(value) {
     var message = value.val();
     appendMessage(message);
 });
