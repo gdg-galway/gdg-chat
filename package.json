@@ -1,0 +1,16 @@
+{
+    "name": "gdg-chat",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "GDG Galway",
+    "license": "ISC",
+    "dependencies": {
+        "browser-sync": "^2.13.0",
+        "firebase-tools": "^3.0.4",
+        "gulp": "^3.9.1"
+    }
+}

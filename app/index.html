@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GDG Chat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="shortcut icon" sizes="192x192" href="/assets/app-icon-192.png">
+    <link rel="icon" sizes="192x192" href="/assets/app-icon-192.png">
+
+    <meta name="theme-color" content="#ea2c3c">
+    <link rel="manifest" href="/manifest.json">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        html,
+        body,
+        main {
+            margin: 0;
+            height: 100%;
+        }
+        
+        body {
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        main {
+            position: relative;
+        }
+        
+        header {
+            height: 60px;
+            background: #ea2c3c;
+            color: #efefef;
+            text-align: right;
+        }
+        
+        #user-panel {
+            display: none;
+        }
+        
+        .connected #user-panel {
+            display: block;
+        }
+        
+        .connected #connect-panel {
+            display: none;
+        }
+        
+        #chat {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        #messages {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            overflow: auto;
+            background: #eee;
+        }
+        
+        #messages .message {
+            padding: 6px 8px;
+        }
+        
+        #messages .message a {
+            padding: 0 3px;
+            word-break: break-all;
+        }
+        
+        #messages .message .image-container {
+            margin-top: 10px;
+        }
+        
+        #messages .message img {
+            max-width: 100%;
+            max-height: 300px;
+        }
+        
+        #chatbox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0 50px;
+        }
+        
+        #chatbox input {
+            width: 100%;
+            height: 30px;
+        }
+        
+        #chatbox input#file {
+            display: none;
+        }
+        
+        #chatbox button {
+            right: 0;
+            width: 50px;
+            height: 30px;
+            position: absolute;
+            top: 0;
+        }
+        
+        #chatbox button#upload {
+            left: 0;
+            right: auto;
+        }
+    </style>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js', {
+                    scope: '/'
+                });
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <div id="user-panel">
+                <span class="username"></span>
+                <button id="logout">Log out</button>
+            </div>
+            <div id="connect-panel">
+                <button id="connect">Log in</button>
+            </div>
+        </header>
+        <div id="chat">
+            <div id="messages"></div>
+            <form id="chatbox">
+                <input accept=".gif,.png,.jpeg,.jpg" type="file" id="file">
+                <button type="button" id="upload" disabled>+</button>
+                <input type="text" id="message" disabled autocomplete="off">
+                <button id="send" disabled>Send</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="./js/firebase.min.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>
