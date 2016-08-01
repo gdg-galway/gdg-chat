@@ -27,4 +27,4 @@ gulp
 - Connect to the [Firebase Console](https://console.firebase.google.com)
 - Create a new project
 - Click on "Add Firebase to your web app"
-![Firebase console]()
+![Firebase console](https://github.com/gdg-galway/gdg-chat/raw/master/app/assets/tutorial/firebase-console.jpg)
