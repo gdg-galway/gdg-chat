@@ -103,6 +103,24 @@ auth.onAuthStateChanged(function(user) {
         logOut();
     }
 });
+
+function logIn(userData) {
+    user = userData;
+    console.log(user);
+    userPanel.querySelector('.username').textContent = user.displayName;
+    document.body.classList.add('connected');
+    uploadBtn.removeAttribute('disabled');
+    send.removeAttribute('disabled');
+    input.removeAttribute('disabled');
+}
+
+function logOut() {
+    user = null;
+    document.body.classList.remove('connected');
+    uploadBtn.setAttribute('disabled', true);
+    send.setAttribute('disabled', true);
+    input.setAttribute('disabled', true);
+}
 ```
 
 ## 3. Save and retrieve messages
