@@ -1,5 +1,7 @@
 # GDG CHAT
 
+During this tutorial, we will build a simple Web Chat client using Firebase. We will then transform our newly created Web App into a Progressive Web App using the Service Worker API, and the LocalStorage API.
+
 ## Requirements
 
 - [NodeJS](https://nodejs.org/en/)
@@ -13,7 +15,7 @@ In the terminal:
 ```
 git clone https://github.com/gdg-galway/gdg-chat.git
 cd gdg-chat
-npm install
+npm install -g gulp browser-sync firebase-tools
 ```
 
 Start your local environment:
@@ -257,7 +259,7 @@ In order to make our Web App Progressive we will have to make it work offline. T
 To simplify this tutorial and your life in general, we will use the SW-Toolbox module.
 But first let's take a look at our `manifest.json` file because it is important.
 
-```json
+```
 {
     // Full name of your app
     "name": "GDGChat",
@@ -397,7 +399,7 @@ ref_messages_filtered.on('child_added', function(value) {
 ## 7. Go live with Firebase hosting in minutes!
 
 We're going to use the `firebase-tools` package to initialise and deploy our app on the free HTTPS subdomain offered by Firebase.
-To do so, let'go to our terminal and use the `firebase init` command. It'll guide you through a quick setup, don't forget to set your app path to the "/app" folder.
+To do so, let'go to our terminal and use the `firebase init` command. It'll guide you through a quick setup, don't forget to set your app path to the `app` folder.
 And now use the command `firebase deploy` to deploy your app.
 Once the app is deployed the terminal will return the url of your app.
 
@@ -419,5 +421,5 @@ But to use push notifications you definitly need a server-side to send these not
 
 
 
-
+I hope you enjoyed this tutorial.
 Thank you!
