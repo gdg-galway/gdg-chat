@@ -32,10 +32,10 @@ gulp
 
 ```javascript
 var config = {
-    apiKey: "AIzaSyAU4SXS_RPtoard35nJsIbUOfJUL75LG20",
-    authDomain: "gdg-chat-9620b.firebaseapp.com",
-    databaseURL: "https://gdg-chat-9620b.firebaseio.com",
-    storageBucket: "gdg-chat-9620b.appspot.com",
+    apiKey: "YOUR_API_KEY",
+    authDomain: "APP_ID.firebaseapp.com",
+    databaseURL: "https://APP_ID.firebaseio.com",
+    storageBucket: "APP_ID.appspot.com",
 };
 firebase.initializeApp(config);
 ```
